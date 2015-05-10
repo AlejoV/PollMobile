@@ -10,35 +10,30 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol RestClientProtocol {
+protocol RestClientProtocol{
   typealias T
   var responseEntity:ResponseEntity<T>?{get set}
-  func processResponse()->ResponseEntity<T>!
+  func processResponse(json:JSON)->ResponseEntity<T>!
 }
 
 class BaseRestClient<U:RestClientProtocol>{
   typealias Delegate = U
   var delegate:Delegate?
-  var url:String
-  var method:Alamofire.Method
-  var jsonParam:[String:AnyObject]?
+  let baseURL = "http://192.168.1.5:8080/PollWeb/api/"
   
-  init(fromUrl url:String, method:Alamofire.Method){
-    self.url = url
-    self.method = method
-  }
+  init(){}
   
-  func callRestService(method:Alamofire.Method, parameters:[String:AnyObject]?){
+  func callRestService(method:Alamofire.Method, url:String, jsonParam:[String:AnyObject]?){
     
-    Alamofire.request(method, url, parameters: jsonParam, encoding: .JSON)
+    Alamofire.request(method, baseURL+url, parameters: jsonParam, encoding: .JSON)
       .responseJSON { (request, response, data, error) in
         println("response: \(response)")
         if let statusCode = response?.statusCode {
-          if statusCode == 200 {
+          if statusCode >= 200 && statusCode < 300{
             let json = JSON(data!)
             println("JSON Account: \(json)")
             //println(request)
-            self.delegate?.responseEntity = self.delegate?.processResponse()
+            self.delegate?.responseEntity = self.delegate?.processResponse(json)
           } else {
             println("error: \(response?.statusCode)")
             var errorResponse = ResponseEntity<AnyObject>()

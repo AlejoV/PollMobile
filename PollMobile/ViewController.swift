@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, RestClientProtocol {
 
+  typealias T = Account
+  var responseEntity:ResponseEntity<Account>?
+  
+  @IBOutlet weak var username: UITextField!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -24,7 +30,26 @@ class ViewController: UIViewController {
   
   
   @IBAction func loginUser(sender: UIButton) {
+    println("USERNAME: \(username.text)")
+    if username.text == ""{
+      let alertController = UIAlertController(title: "Empty username", message:
+        "Username can't be empty", preferredStyle: UIAlertControllerStyle.Alert)
+      alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+      
+      self.presentViewController(alertController, animated: true, completion: nil)
+      return
+    }
+    
+    var accountClient:AccountClient<ViewController> = AccountClient()
+    accountClient.delegate = self
+    accountClient.loginUser(username.text)
   }
+  
+  func processResponse(json:JSON) -> ResponseEntity<Account>! {
+    println("In delegate \(json)")
+    return nil
+  }
+
 
 }
 

@@ -13,6 +13,12 @@
 		503672F31AEFA8E300ADA3D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503672F21AEFA8E300ADA3D8 /* Images.xcassets */; };
 		503672F61AEFA8E300ADA3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 503672F41AEFA8E300ADA3D8 /* LaunchScreen.xib */; };
 		503673021AEFA8E300ADA3D8 /* PollMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503673011AEFA8E300ADA3D8 /* PollMobileTests.swift */; };
+		5036730E1AF0D88200ADA3D8 /* AccountClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036730D1AF0D88200ADA3D8 /* AccountClient.swift */; };
+		503673101AF0D8B300ADA3D8 /* BaseRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036730F1AF0D8B300ADA3D8 /* BaseRestClient.swift */; };
+		503673121AF0D9D500ADA3D8 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503673111AF0D9D500ADA3D8 /* ResponseEntity.swift */; };
+		503673151AF606CF00ADA3D8 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503673141AF606CF00ADA3D8 /* BaseEntity.swift */; };
+		503673171AF6091F00ADA3D8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503673161AF6091F00ADA3D8 /* Account.swift */; };
+		F5C5F5942B771BBBA20B774E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E1A8E32E0A503F77032DD5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09E1A8E32E0A503F77032DD5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503672E61AEFA8E200ADA3D8 /* PollMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PollMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503672EA1AEFA8E200ADA3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503672EB1AEFA8E200ADA3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +43,13 @@
 		503672FB1AEFA8E300ADA3D8 /* PollMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PollMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		503673001AEFA8E300ADA3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503673011AEFA8E300ADA3D8 /* PollMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollMobileTests.swift; sourceTree = "<group>"; };
+		5036730D1AF0D88200ADA3D8 /* AccountClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountClient.swift; sourceTree = "<group>"; };
+		5036730F1AF0D8B300ADA3D8 /* BaseRestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRestClient.swift; sourceTree = "<group>"; };
+		503673111AF0D9D500ADA3D8 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		503673141AF606CF00ADA3D8 /* BaseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		503673161AF6091F00ADA3D8 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		D2511CCAB3D0EA1006816002 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F567135B197147B3F40D689D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C5F5942B771BBBA20B774E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +77,8 @@
 				503672E81AEFA8E200ADA3D8 /* PollMobile */,
 				503672FE1AEFA8E300ADA3D8 /* PollMobileTests */,
 				503672E71AEFA8E200ADA3D8 /* Products */,
+				F7928CD3D79AD47A0812ECB9 /* Pods */,
+				BCC9FA4E513901FF265BD3C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +94,7 @@
 		503672E81AEFA8E200ADA3D8 /* PollMobile */ = {
 			isa = PBXGroup;
 			children = (
+				5036730B1AEFB54000ADA3D8 /* model */,
 				503672EB1AEFA8E200ADA3D8 /* AppDelegate.swift */,
 				503672ED1AEFA8E200ADA3D8 /* ViewController.swift */,
 				503672EF1AEFA8E200ADA3D8 /* Main.storyboard */,
@@ -112,6 +130,51 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5036730B1AEFB54000ADA3D8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				503673131AF606B900ADA3D8 /* entities */,
+				5036730C1AEFB54800ADA3D8 /* rest */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5036730C1AEFB54800ADA3D8 /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				5036730D1AF0D88200ADA3D8 /* AccountClient.swift */,
+				5036730F1AF0D8B300ADA3D8 /* BaseRestClient.swift */,
+				503673111AF0D9D500ADA3D8 /* ResponseEntity.swift */,
+			);
+			name = rest;
+			sourceTree = "<group>";
+		};
+		503673131AF606B900ADA3D8 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				503673141AF606CF00ADA3D8 /* BaseEntity.swift */,
+				503673161AF6091F00ADA3D8 /* Account.swift */,
+			);
+			name = entities;
+			sourceTree = "<group>";
+		};
+		BCC9FA4E513901FF265BD3C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09E1A8E32E0A503F77032DD5 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7928CD3D79AD47A0812ECB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2511CCAB3D0EA1006816002 /* Pods.debug.xcconfig */,
+				F567135B197147B3F40D689D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 503673051AEFA8E300ADA3D8 /* Build configuration list for PBXNativeTarget "PollMobile" */;
 			buildPhases = (
+				274374C74BB89FAA0E18B569 /* Check Pods Manifest.lock */,
 				503672E21AEFA8E200ADA3D8 /* Sources */,
 				503672E31AEFA8E200ADA3D8 /* Frameworks */,
 				503672E41AEFA8E200ADA3D8 /* Resources */,
+				38AA0D626BFF55303529D64D /* Embed Pods Frameworks */,
+				6CEA6367D82B57DA0DE1B78E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,13 +273,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		274374C74BB89FAA0E18B569 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		38AA0D626BFF55303529D64D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CEA6367D82B57DA0DE1B78E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		503672E21AEFA8E200ADA3D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503673121AF0D9D500ADA3D8 /* ResponseEntity.swift in Sources */,
+				503673151AF606CF00ADA3D8 /* BaseEntity.swift in Sources */,
+				5036730E1AF0D88200ADA3D8 /* AccountClient.swift in Sources */,
 				503672EE1AEFA8E200ADA3D8 /* ViewController.swift in Sources */,
 				503672EC1AEFA8E200ADA3D8 /* AppDelegate.swift in Sources */,
+				503673101AF0D8B300ADA3D8 /* BaseRestClient.swift in Sources */,
+				503673171AF6091F00ADA3D8 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +457,11 @@
 		};
 		503673061AEFA8E300ADA3D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2511CCAB3D0EA1006816002 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PollMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,9 +469,11 @@
 		};
 		503673071AEFA8E300ADA3D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F567135B197147B3F40D689D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PollMobile/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +532,7 @@
 				503673071AEFA8E300ADA3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		503673081AEFA8E300ADA3D8 /* Build configuration list for PBXNativeTarget "PollMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +541,7 @@
 				5036730A1AEFA8E300ADA3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
