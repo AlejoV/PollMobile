@@ -8,10 +8,7 @@
 
 import Foundation
 
-class AccountClient<U:RestClientProtocol>: BaseRestClient<U> {
-  typealias Delegate = U
-  
-  override init() { }
+class AccountClient:BaseRestClient {
   
   func loginUser(username: String){
     println("URL: \(baseURL)accounts/\(username) ")

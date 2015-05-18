@@ -11,14 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 protocol RestClientProtocol{
-  typealias T
-  var responseEntity:ResponseEntity<T>?{get set}
-  func processResponse(json:JSON)->ResponseEntity<T>!
+  func processResponse(json:JSON)
+  func processError(errorCode:Int?, errorDescription:String?)
 }
 
-class BaseRestClient<U:RestClientProtocol>{
-  typealias Delegate = U
-  var delegate:Delegate?
+class BaseRestClient{
+  var delegate:RestClientProtocol?
   let baseURL = "http://192.168.1.5:8080/PollWeb/api/"
   
   init(){}
@@ -32,15 +30,10 @@ class BaseRestClient<U:RestClientProtocol>{
           if statusCode >= 200 && statusCode < 300{
             let json = JSON(data!)
             println("JSON Account: \(json)")
-            //println(request)
-            self.delegate?.responseEntity = self.delegate?.processResponse(json)
+            self.delegate?.processResponse(json)
           } else {
             println("error: \(response?.statusCode)")
-            var errorResponse = ResponseEntity<AnyObject>()
-            errorResponse.success = false
-            errorResponse.errorCode = response?.statusCode
-            errorResponse.error = response?.description
-            self.delegate?.responseEntity = ResponseEntity()
+            self.delegate?.processError(response?.statusCode, errorDescription: response?.description)
           }
         }
     }

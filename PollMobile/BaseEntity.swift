@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class BaseEntity{
   
-  init (json:JSON){
+  init (json:JSON?){
     
   }
   

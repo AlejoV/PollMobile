@@ -9,12 +9,13 @@
 import UIKit
 import SwiftyJSON
 
+
 class ViewController: UIViewController, RestClientProtocol {
 
-  typealias T = Account
-  var responseEntity:ResponseEntity<Account>?
-  
   @IBOutlet weak var username: UITextField!
+  
+  var user:Account = Account(json: nil)
+  var performSegue:Bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,14 +41,34 @@ class ViewController: UIViewController, RestClientProtocol {
       return
     }
     
-    var accountClient:AccountClient<ViewController> = AccountClient()
+    var accountClient:AccountClient = AccountClient()
     accountClient.delegate = self
     accountClient.loginUser(username.text)
   }
   
-  func processResponse(json:JSON) -> ResponseEntity<Account>! {
-    println("In delegate \(json)")
-    return nil
+  func processResponse(json:JSON){
+    println("In delegate processResponse \(json)")
+    user = Account(json: json)
+    performSegue = true
+    self.performSegueWithIdentifier("showMainController", sender: self)
+    
+  }
+  
+  func processError(errorCode: Int?, errorDescription: String?) {
+    println("In delegate processError \(errorDescription)")
+  }
+  
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    println("In prepareForSegue")
+    var dest:MainTabBarViewController = segue.destinationViewController as! MainTabBarViewController
+    dest.user = self.user
+    
+  }
+  
+  override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool{
+    println("In should perform")
+    return performSegue
   }
 
 
