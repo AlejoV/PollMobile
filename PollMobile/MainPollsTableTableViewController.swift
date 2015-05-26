@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class MainPollsTableTableViewController: UITableViewController, RestClientProtocol {
+class MainPollsTableTableViewController: UITableViewController, RestClientProtocol, UISearchBarDelegate {
   
   var user:Account?
   var pollList = [Poll]()
@@ -61,9 +61,13 @@ class MainPollsTableTableViewController: UITableViewController, RestClientProtoc
     let cell = tableView.dequeueReusableCellWithIdentifier("MainPollCell", forIndexPath: indexPath) as! MainTableViewCell
     cell.createdByLabel.text = "Created By " + self.pollList[indexPath.row].owner.username
     cell.title.text = self.pollList[indexPath.row].title
+    cell.pollDescription.text = self.pollList[indexPath.row].description
     return cell;
   }
-
+  
+  func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+    return UIBarPosition.TopAttached
+  }
   
   /*
   // Override to support conditional editing of the table view.
