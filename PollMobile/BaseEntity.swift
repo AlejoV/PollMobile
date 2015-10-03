@@ -9,10 +9,18 @@
 import Foundation
 import SwiftyJSON
 
+protocol JSONEntity {
+    func entityToJSON()->[String:AnyObject]
+}
+
 class BaseEntity{
-  
-  init (json:JSON?){
     
-  }
-  
+    init (json:JSON?){
+        
+    }
+    
+    init (){
+        
+    }
+    
 }

@@ -9,16 +9,23 @@
 import Foundation
 import SwiftyJSON
 
-class Account:BaseEntity{
-  
-  let username:String!
-  let id:Int!
-  
-  override init(json: JSON?) {
-    self.username = json?["username"].stringValue
-    self.id = json?["accountId"].int
-    super.init(json: json)
-  }
-  
-  
+class Account:BaseEntity, JSONEntity{
+    
+    let username:String!
+    let id:NSNumber!
+    
+    override init(json: JSON?) {
+        self.username = json?["username"].stringValue
+        self.id = json?["accountId"].int
+        super.init(json: json)
+    }
+    
+    func entityToJSON()->[String:AnyObject]{
+        var dicJSON = [String: AnyObject]()
+        dicJSON["username"] = self.username
+        dicJSON["id"] = self.id
+        return dicJSON
+    }
+    
+    
 }

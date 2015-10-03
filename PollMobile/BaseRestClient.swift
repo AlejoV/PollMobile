@@ -17,7 +17,7 @@ protocol RestClientProtocol{
 
 class BaseRestClient{
   var delegate:RestClientProtocol?
-  let baseURL = "http://192.168.1.5:8080/PollWeb/api/"
+  let baseURL = "http://10.0.1.43:8080/PollWeb/api/"
   
   init(){}
   
@@ -25,7 +25,15 @@ class BaseRestClient{
     
     Alamofire.request(method, baseURL+url, parameters: jsonParam, encoding: .JSON)
       .responseJSON { (request, response, data, error) in
-        println("response: \(response)")
+        if let unw = response {
+            println("response: \(unw)")
+        }
+        if let unw = error {
+            println("error: \(unw)")
+        }
+        if let unw: AnyObject = data {
+            println("data: \(unw)")
+        }
         if let statusCode = response?.statusCode {
           if statusCode >= 200 && statusCode < 300{
             let json = JSON(data!)

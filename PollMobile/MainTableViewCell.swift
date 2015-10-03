@@ -11,8 +11,7 @@ import UIKit
 class MainTableViewCell: UITableViewCell {
   
   @IBOutlet weak var createdByLabel: UILabel!
-  @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var pollDescription: UITextView!
+  @IBOutlet weak var pollDescription: UILabel!
   
   
   override func awakeFromNib() {

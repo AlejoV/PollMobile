@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class PollCategory:BaseEntity{
-  let categoryId:Int!
+  let categoryId:NSNumber!
   let description:String?
   
   override init(json: JSON?) {
